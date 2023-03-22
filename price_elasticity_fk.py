@@ -140,7 +140,7 @@ def create_uniq_product_code_id(df,product_code_id_uniq):
     df_product_code_id_uniq = df[df["product_code_id"]== product_code_id_uniq]
     return df_product_code_id_uniq
 
-##product_group_idに紐づくレコードを抽出する
+#product_group_idに紐づくレコードを抽出する
 def create_uniq_product_group_id(df,product_group_id_uniq):
     df_product_group_id_uniq = df[df["product_group_id1"]== product_group_id_uniq]
     return df_product_group_id_uniq
@@ -151,7 +151,7 @@ def merge_skus_retail_price(df1,df2):
     df3 = pd.merge(df1,df2,left_on=['sku_id'],right_on=['id'],how='left')
     return df3
 
-#20230222最小のmin_avg_quantityを保持するように結合
+#最小のmin_avg_quantityを保持するように結合
 def merge_min_avg_quantity(df1,df2):
 #    df3 = pd.merge(df1,df2,left_on=['sku_id','discount_rate_from_wholesale_price'],right_on=['sku_id','discount_rate_from_wholesale_price'],how='left')
     df3 = pd.merge(df1,df2,left_on=['sku_id'],right_on=['sku_id'],how='left')
