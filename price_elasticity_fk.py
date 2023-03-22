@@ -235,7 +235,7 @@ def sum_quantities(df):
     return df["sum_ttl_quantity"]
 
 
-#20230221　平均販売数量と割引率の２軸でピボットデータを更に加工
+#平均販売数量と割引率の２軸でピボットデータを更に加工
 df_pivot_product_code_id_smpl["sum_quantity"] = df_pivot_product_code_id_smpl.sum(axis=1)
 df_pivot_product_code_id_smpl["sum_ttl_quantity"] = sum_quantities(df_pivot_product_code_id_smpl)
 df_pivot_product_code_id_smpl["avg_quantity"] = df_pivot_product_code_id_smpl["sum_ttl_quantity"]/df_pivot_product_code_id_smpl["sum_quantity"]
