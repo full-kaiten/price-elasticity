@@ -115,8 +115,6 @@ def clean_quantity_df(df):
 #外れ値除去。1日100個以上売れるものは省く。位置で指定しているので少しsliceでずれているかも
 def drop_outlier_df(df):
     df = df.iloc[:, :100]
-    #この書き方の方が良いかも
-    #df = df.iloc[:, "1":"100"]
     return df
 
 #割引率が0より小さいレコード、100より大きいレコードを削除
